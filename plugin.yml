@@ -1,7 +1,8 @@
 ---
 name: BiggusDickus
 version: 0.0.1
-main: JviguyGames\BiggusDickus\Main
-api: 3.16.0
-extensions: ["gd"]
+main: JviguyGames\BiggusDickus\Loader
+api: [3.0.0, 4.0.0]
+extensions:
+  Core: '>=8.0'
 ...

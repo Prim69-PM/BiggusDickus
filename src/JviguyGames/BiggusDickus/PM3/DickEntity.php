@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JviguyGames\BiggusDickus;
+namespace JviguyGames\BiggusDickus\PM3;
 
 use pocketmine\entity\Entity;
 use pocketmine\entity\Human;
@@ -23,7 +23,6 @@ class DickEntity extends Human
     public $gravity = 0;
     public $canCollide = false;
     protected $drag = 0;
-
 
     public function __construct(Skin $skin, Level $level, CompoundTag $nbt)
     {
@@ -99,11 +98,6 @@ class DickEntity extends Human
     public function canBreathe(): bool
     {
         return true;
-    }
-
-    public function canSaveWithChunk(): bool
-    {
-        return false;
     }
 
     protected function applyGravity(): void
