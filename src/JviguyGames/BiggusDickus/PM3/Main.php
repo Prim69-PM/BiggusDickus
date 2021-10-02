@@ -18,7 +18,8 @@ class Main implements Listener {
     /** @var Skin $skin the dick geo / skin */
     public Skin $skin;
 
-    public function __construct(public Loader $loader){}
+    public function __construct(public Loader $loader){
+    }
 
     public function onEnable() : void {
         $this->loader->saveResource("dildo.png");
