@@ -15,8 +15,8 @@ use function imagecreatefrompng;
 
 class Main implements Listener {
 
-    /** @var Skin $skin the dick geo / skin */
-    public Skin $skin;
+    /** @var Skin $skin */
+    public $skin;
 
     public function __construct(public Loader $loader){
     }
