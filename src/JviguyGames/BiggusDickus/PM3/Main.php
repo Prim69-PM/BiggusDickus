@@ -8,20 +8,23 @@ use JviguyGames\BiggusDickus\Loader;
 use pocketmine\entity\Entity;
 use pocketmine\entity\Skin;
 use pocketmine\event\Listener;
+use JviguyGames\BiggusDickus\PM3\DickEntity;
 use pocketmine\event\player\PlayerJoinEvent;
 use function file_get_contents;
 use function imagecreatefrompng;
 
 class Main implements Listener {
 
-    /** @var Skin $skin the dick geo / skin */
-    public Skin $skin;
+    /** @var Skin $skin */
+    public $skin;
 
-    public function __construct(public Loader $loader){}
+    public function __construct(public Loader $loader){
+    }
 
     public function onEnable() : void {
         $this->loader->saveResource("dildo.png");
         $this->loader->saveResource("dildo.geo.json");
+        Entity::registerEntity(DickEntity::class, true);
         $this->loader->getServer()->getPluginManager()->registerEvents($this, $this->loader);
         $this->skin = new Skin("belly", Loader::fromImage(imagecreatefrompng($this->loader->getDataFolder() . "dildo.png")), "", "geometry.dildo", file_get_contents($this->loader->getDataFolder() . "dildo.geo.json"));
     }
