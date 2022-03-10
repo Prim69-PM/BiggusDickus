@@ -30,8 +30,7 @@ class Main implements Listener {
     public function attachDick(Player $entity) : void {
         $entity->getNetworkProperties()->setGenericFlag(EntityMetadataProperties::RIDER_ROTATION_LOCKED, true);
         $dick = new DickEntity($entity->getLocation(), $this->skin);
-        $dick->getNetworkProperties()->setLong(EntityMetadataProperties::OWNER_EID, $entity->getId());
-        $entity->getWorld()->addEntity($dick);
+		$dick->setOwningEntity($entity);
         $dick->spawnToAll();
     }
 
