@@ -21,7 +21,6 @@ class Main implements Listener {
     public function __construct(public Loader $loader){}
 
     public function onEnable() : void {
-        $this->loader->getServer()->getLogger()->warning('LOADED ON PM4');
         $this->loader->saveResource("dildo.png");
         $this->loader->saveResource("dildo.geo.json");
         $this->loader->getServer()->getPluginManager()->registerEvents($this, $this->loader);
